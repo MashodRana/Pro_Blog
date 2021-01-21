@@ -1,0 +1,15 @@
+<!-- templates/signup.html -->
+
+{% extends 'base.html' %}
+
+<h1>Create Account</h1>
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Signup</button>
+</form>
+
+{% endblock content %}
