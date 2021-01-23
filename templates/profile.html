@@ -1,0 +1,28 @@
+<!-- templates/about.html -->
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- Title -->
+<h1>Profile Information</h1>
+
+<hr>
+
+<!-- Post Content -->
+<ul class="list-group">
+    <li class="list-group-item">User Name: {{user.username}}</li>
+    <li class="list-group-item">First Name: {{user.first_name}}</li>
+    <li class="list-group-item">Last Name: {{user.last_name}}</li>
+    <li class="list-group-item">Email Address: {{user.email}}</li>
+    <li class="list-group-item">Age: {{user.age}}</li>
+    <li class="list-group-item">Profession: {{user.profession}}</li>
+  </ul>
+
+<hr>
+<a class="btn btn-warning" href="{% url 'profile_edit' pk=user.pk %}" >Update information</a>
+<a class="btn btn-danger" href="{% url 'password_change'%}" >Change Password</a>
+<hr>
+
+{% endblock content %}

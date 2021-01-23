@@ -1,0 +1,51 @@
+<!-- templates/registration/login.html -->
+
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="row">
+
+  <div class="col-lg-2"></div>
+
+  <!-- Comment content  -->
+  <div class="col-lg-8 login">
+
+    <!-- Title -->
+    <h1>Comment</h1>
+
+    <!-- Comment form -->
+    <form method="post" class="signup-form">
+        {% csrf_token %}
+
+        {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field }}
+        {% endfor %}
+
+        
+            {% for field in form.visible_fields %}
+                <div class="form-group">
+                    <p class="lead text-muted">{{field.label_tag}}</p>
+
+                    {{field}}
+
+                    {% for error in field.errors %}
+                        {{error}}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+
+    <!-- /form -->
+  </div>
+
+  <div class="col-lg-2"></div>
+
+</div>
+<!-- /.row -->
+
+{% endblock content %}

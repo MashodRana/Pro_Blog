@@ -1,11 +1,21 @@
 <!-- templates/new_article.html -->
 
+{% extends 'base.html' %}
+
 {% block content %}
-<form action="" method="POST">
+
+<!-- Title -->
+<h1>New post</h1>
+
+<!-- Newpost form -->
+<form method="post" class="newpost-form">
+  <div class="form-group">
     {% csrf_token %}
     {{form.as_p}}
-
-    <button type="submit">Save</button>
-
+    <!-- <label for="subject">Subject</label> -->
+  
+  </div>
+  <button type="submit" class="btn btn-primary">Post</button>
 </form>
+<!-- /form --
 {% endblock content %}

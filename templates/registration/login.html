@@ -2,14 +2,35 @@
 
 {% extends 'base.html' %}
 
-<h1>Log In</h1>
+
 
 {% block content %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Login</button>
-</form>
+<div class="row">
+
+  <div class="col-lg-2"></div>
+
+  <!-- Login content  -->
+  <div class="col-lg-8 login">
+
+    <!-- Title -->
+    <h1>Login</h1>
+
+    <!-- Login form -->
+    <form method="post" class="login-form">
+      {% csrf_token %}
+      {{form.as_p}}
+      
+      <button type="submit" class="btn btn-success">Log in</button>
+      <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up Now</a></p>
+    </form>
+    <!-- /form -->
+    <p class="muted-text">Have you forgotten your password, <a href="{% url 'password_reset' %}">Click Here</a></p>
+  </div>
+
+  <div class="col-lg-2"></div>
+
+</div>
+<!-- /.row -->
 
 {% endblock content %}

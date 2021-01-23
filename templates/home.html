@@ -3,23 +3,45 @@
 {% extends 'base.html' %}
 
 
-{% block title %}Home{% endblock title %}
-
 {% block content %}
+<div class="row">
 
-{% if user.is_authenticated %}
-Hi, {{user.username}}
-<a href="{% url 'logout' %}">Logout</a>
-{% else %}
-You are not logged in, please login.
-<a href="{% url 'login' %}">Login</a>
-<a href="{% url 'signup' %}">Signup</a>
-{% endif %}
+    <!-- Blog Entries Column -->
+    <div class="col-md-12">
+        <h2>Articles</h2>
 
-<h2>List of Articles</h2>
-{% for article in all_article %}
-{{article.title}}
-<p>{{article.body}}</p>
-{% endfor %}
+        {% for article in all_article %}
+
+        <h2 class="post-title">
+            {{article.title}}
+        </h2>
+
+        <p class="lead">
+            by {{article.article_writer}}
+        </p>
+        <p><span class="glyphicon glyphicon-time"></span> Posted on {{article.published_date}}</p>
+        <p>
+            {{article.body|truncatechars:512}}
+        </p>
+        <a class="btn btn-default" href="{% url 'detail_article' pk=article.pk %}">Read More</a>
+        <hr>
+        {% endfor %}
+
+
+        <!-- Pager -->
+        <ul class="pager">
+            <li class="previous">
+                <a href="#">Prev</a>
+            </li>
+            <li class="next">
+                <a href="#">Next</a>
+            </li>
+        </ul>
+        
+    </div>
+
+</div>
+<!-- /.row -->
+
 
 {% endblock content %}

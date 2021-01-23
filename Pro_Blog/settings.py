@@ -125,21 +125,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"), ]
 
 # Custom Settings
+
+TIME_ZONE = 'Asia/Dhaka'
 
 AUTH_USER_MODEL = 'users.CustomUserModel'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.mailgun.org'
-EMAIL_HOST_USER = 'pro_blog@sandbox26c6eda11a0c4cb59e008e62451df377.mailgun.org'
-EMAIL_HOST_PASSWORD = '272329a3b2eec3c41ec7106a6daf66b2-e438c741-4acc185a'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.mailgun.org'
+# EMAIL_HOST_USER = 'pro_blog@sandbox26c6eda11a0c4cb59e008e62451df377.mailgun.org'
+# EMAIL_HOST_PASSWORD = '272329a3b2eec3c41ec7106a6daf66b2-e438c741-4acc185a'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
 
 # 272329a3b2eec3c41ec7106a6daf66b2-e438c741-4acc185a
 # Grab your SMTP credentials:

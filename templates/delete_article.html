@@ -1,10 +1,15 @@
 <!-- templates/base.html -->
+{% extends 'base.html' %}
 
 {% block content %}
-<form action="" method="POST">
-    {% csrf_token %}
-    <h1>Are you sure you want to delete "{{article}}"</h1>
-    <button type="submit">confirm</button>
-</form>
 
+<div class="well">
+    <h1>Deletion of Article</h1>
+    <hr>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h4 class="text-muted" >Are you sure you want to delete "<b>{{article}}</b>"</h1>
+        <button class="btn btn-success" type="submit">confirm</button>
+    </form>
+</div>
 {% endblock content %}

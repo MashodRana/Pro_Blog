@@ -6,6 +6,8 @@ articles/__pycache__/
 articles/migrations/__pycache__/
 articles/migrations/0001_initial.py
 articles/migrations/0002_auto_20210121_1538.py
+articles/migrations/0003_commentmodel.py
+articles/migrations/0004_commentmodel_created_date.py
 
 Pro_Blog/__pycache__/
 
