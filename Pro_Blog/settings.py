@@ -138,15 +138,9 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_HOST = 'smtp.mailgun.org'
-# EMAIL_HOST_USER = 'pro_blog@sandbox26c6eda11a0c4cb59e008e62451df377.mailgun.org'
-# EMAIL_HOST_PASSWORD = '272329a3b2eec3c41ec7106a6daf66b2-e438c741-4acc185a'
-# EMAIL_PORT = 587
+# EMAIL_HOST = ''
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_PORT = 
 # EMAIL_USE_TLS = True
 
-# 272329a3b2eec3c41ec7106a6daf66b2-e438c741-4acc185a
-# Grab your SMTP credentials:
-# SMTP hostname: smtp.mailgun.org
-# Port: 587 (recommended)
-# Username: postmaster@sandbox26c6eda11a0c4cb59e008e62451df377.mailgun.org
-# Default password: 3ec252adbd15a7bbb693e61156d678c2-e438c741-e794fe10
